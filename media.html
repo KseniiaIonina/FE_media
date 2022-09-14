@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        :root{
+             --sidebar-width: 250px;
+        }
+      .sidebar {
+        width: var(--sidebar-width);
+        height: 100%;
+        background: grey;
+        position: fixed;
+        top: 0;
+        left: 0;
+        font-size: 2rem;
+        color: #fff;
+        transition: all 0.5s ease-out;
+      }
+      main {
+        margin-left: var(--sidebar-width);
+        padding: 2rem;
+      }
+      .burger {
+        display: none;
+        transition: all .5s ease-out;
+      }
+      /* секция стилей для мобильных устройств */
+      @media (max-width: 768px) {
+        .sidebar {
+          transform: translateX(calc(var(--sidebar-width)*-1));
+        }
+        .sidebar--open {
+            transform: none;
+        }
+        .burger--open {
+            transform: translateX(var(--sidebar-width));
+        }
+        main {
+          margin: 0;
+        }
+        .burger {
+          display: inline;
+          position: fixed;
+          bottom: 10vh;
+          left: 0;
+          background: #fff;
+          border: 1px solid;
+          font-size: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="burger"onclick="toggleMenu()" >+</button>
+    <aside class="sidebar">menu items</aside>
+    <main>
+      L Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
+      ipsum ullam, molestias iste nam mollitia magnam magni facilis distinctio
+      obcaecati nemo blanditiis illo consequuntur sit quaerat aperiam. Corporis,
+      ipsam saepe? Iste quae voluptas asperiores vero ex adipisci, perferendis
+      eligendi consequatur labore. Recusandae voluptatem, soluta, nam vel
+      expedita necessitatibus laudantium, culpa officiis beatae maxime
+      repudiandae in natus quasi laborum nesciunt inventore! Nihil itaque odio
+      reprehenderit inventore id atque adipisci nulla sapiente asperiores rerum
+      et aperiam nemo, vitae expedita cupiditate, vero unde aliquam dolor
+      molestiae, assumenda fugiat. Est optio quos harum mollitia. Delectus rerum
+      consectetur in corporis neque nisi. Non neque enim, ratione fugiat velit
+      dolorum adipisci quae rerum incidunt nulla provident. Iste, quae doloribus
+      possimus odio perferendis corrupti molestias vel dolor. Assumenda dolore
+      tenetur dicta doloremque. Accusantium, ipsam nisi. Perferendis vitae
+      repellendus quasi distinctio ipsa, unde consectetur quaerat ex nam! Quas
+      minus ipsa neque repellendus veritatis, exercitationem a nam incidunt
+      doloremque. Natus sint vitae labore obcaecati repellat recusandae
+      distinctio? Velit labore libero veniam qui a nostrum numquam, aspernatur
+      eaque maxime, odit quia quibusdam, nihil rem officia dolore ipsum. Iste,
+      deleniti ipsum! Officia, nam est quaerat quia similique quis dignissimos.
+      Nobis fuga, culpa adipisci asperiores tempora cum facere, provident
+      incidunt id illo sit quae est, minus quod tempore repellat alias minima
+      similique! Inventore eligendi totam deleniti autem sed odit, eos excepturi
+      voluptas vel dolores repellat ducimus iusto nostrum neque nam modi. Sint,
+      voluptas amet? Beatae cumque, esse doloribus et quasi ab aperiam? Rem
+      tempora maiores molestias dignissimos ea amet animi quisquam aut provident
+      similique aliquam voluptates dolore non nobis at quos reprehenderit, sit
+      eius? Velit repellat consequatur facere, quo quisquam accusantium eaque.
+      Exercitationem quos nesciunt unde, velit consectetur nihil, ipsa nam
+      repellat voluptates quisquam a, eum nostrum rerum laboriosam sequi totam
+      saepe autem id? Perspiciatis molestiae corporis officia sit nam at
+      commodi. ipsum dolor sit amet consectetur adipisicing elit. Iure quis
+      explicabo dolor, aperiam odio tempora rerum assumenda neque molestiae
+      tempore asperiores voluptatibus odit architecto totam quos repellat
+      cupiditate recusandae blanditiis. Lorem ipsum dolor sit, amet consectetur
+      adipisicing elit. Error quas quos numquam tenetur quo natus accusantium
+      odit ipsa dolorem, officiis debitis illum quae perferendis ratione
+      suscipit voluptatibus? Culpa, explicabo expedita. orem, ipsum dolor sit
+      amet consectetur adipisicing elit. Labore, tempora nostrum vero
+      repellendus, minima amet dolor dolores cupiditate totam vel voluptates
+      obcaecati iusto repellat! Accusantium impedit ut eaque quidem consequatur.
+    </main>
+    <script>
+        function toggleMenu () {
+            var sidebar= document.querySelector('.sidebar');
+            var burger = document.querySelector('.burger');
+
+            sidebar.classList.toggle('sidebar--open');
+            burger.classList.toggle('burger--open')
+        }
+    </script>
+  </body>
+</html>
